@@ -1,0 +1,29 @@
+{
+  "servers": {
+    "postgres": {
+      "type": "stdio",
+      "command": "/home/rokol/repos/MCP/postgres_mcp/venv/bin/python3",
+      "args": ["/home/rokol/repos/MCP/postgres_mcp/postgres_mcp_server.py"],
+      "disabled": false,
+      "autoApprove": [],
+      "env": {
+        "CONNECTION_NAMES": "default,production,development",
+        "DEFAULT_HOST": "localhost",
+        "DEFAULT_PORT": "5432",
+        "DEFAULT_USER": "learning_user",
+        "DEFAULT_PASSWORD": "django123",
+        "DEFAULT_DATABASE": "learning_db",
+        "PRODUCTION_HOST": "prod-db.example.com",
+        "PRODUCTION_PORT": "5432",
+        "PRODUCTION_USER": "prod_user",
+        "PRODUCTION_PASSWORD": "super_secret_password",
+        "PRODUCTION_DATABASE": "production_db",
+        "DEVELOPMENT_HOST": "localhost",
+        "DEVELOPMENT_PORT": "5432",
+        "DEVELOPMENT_USER": "dev_user",
+        "DEVELOPMENT_PASSWORD": "dev_password",
+        "DEVELOPMENT_DATABASE": "dev_db"
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "name": "postgres-mcp-server",
+  "version": "1.0.0",
+  "description": "PostgreSQL MCP Server for VS Code with configurable settings",
+  "author": "Your Name",
+  "license": "MIT",
+  "main": "postgres_mcp_server.py",
+  "contributes": {
+    "configuration": {
+      "title": "PostgreSQL MCP Server",
+      "properties": {
+        "postgres.connections": {
+          "type": "array",
+          "description": "Database connection configurations",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Connection identifier"
+              },
+              "host": {
+                "type": "string",
+                "description": "Database host",
+                "default": "localhost"
+              },
+              "port": {
+                "type": "integer",
+                "description": "Database port",
+                "default": 5432
+              },
+              "user": {
+                "type": "string",
+                "description": "Database user"
+              },
+              "password": {
+                "type": "string",
+                "description": "Database password"
+              },
+              "database": {
+                "type": "string",
+                "description": "Database name"
+              }
+            },
+            "required": ["name", "host", "user", "password", "database"]
+          },
+          "default": [
+            {
+              "name": "default",
+              "host": "localhost",
+              "port": 5432,
+              "user": "learning_user",
+              "password": "django123",
+              "database": "learning_db"
+            }
+          ]
+        },
+        "postgres.defaultConnection": {
+          "type": "string",
+          "description": "Default connection name to use",
+          "default": "default"
+        },
+        "postgres.queryTimeout": {
+          "type": "integer",
+          "description": "Query timeout in seconds",
+          "default": 30,
+          "minimum": 1
+        },
+        "postgres.logLevel": {
+          "type": "string",
+          "enum": ["debug", "info", "warning", "error"],
+          "description": "Logging level",
+          "default": "info"
+        },
+        "postgres.enableSSL": {
+          "type": "boolean",
+          "description": "Enable SSL for database connections",
+          "default": false
+        }
+      }
+    }
+  }
+}

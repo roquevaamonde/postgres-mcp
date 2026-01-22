@@ -1,0 +1,5 @@
+# PostgreSQL MCP Server dependencies
+# ==================================
+
+# PostgreSQL adapter for Python
+psycopg2-binary==2.9.9
