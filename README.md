@@ -13,6 +13,10 @@ This MCP server provides a clean, JSON-based interface to PostgreSQL databases t
 - **Type Hints**: Full type annotation for IDE support and error prevention
 - **Comprehensive Testing**: Unit tests ensuring reliability
 - **Object-Oriented Design**: Well-structured, maintainable codebase
+- ✅ **Input Validation**: Comprehensive query and connection validation
+- 📝 **Modern Type Hints**: Python 3.9+ syntax (dict, list, tuple)
+- 📊 **Structured Logging**: Centralized logging configuration
+- ⚙️ **Configuration Management**: Centralized constants and settings
 
 ## 📋 Requirements
 
@@ -26,19 +30,21 @@ This MCP server provides a clean, JSON-based interface to PostgreSQL databases t
 ### Quick Setup
 
 ```bash
-# 1. Copy the configuration example
+# 1. Clone or create the project
+cd your-project-path/postgres_mcp
+
+# 2. Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Copy the configuration example
 cp config/settings.json.example settings.json
 
-# 2. Edit settings.json with your database credentials
-nano settings.json
-
-# 3. Activate the virtual environment
-source venv/bin/activate
-
-# 4. Install dependencies
-pip install psycopg2-binary
-
-# 5. Ready to use in VS Code
+# 5. Edit settings.json with your database credentials
+# Add your database connection details
 ```
 
 ## ⚙️ Configuration
@@ -114,7 +120,7 @@ Run the comprehensive test suite to verify functionality:
 
 ```bash
 # Activate virtual environment
-source venv/bin/activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Execute tests
 pytest tests/ -v
@@ -128,6 +134,17 @@ tests/test_postgres_mcp.py::TestMCPServer::test_initialize_response PASSED
 ...
 ===== 9 passed in 0.07s =====
 ```
+
+## 🎯 Code Quality
+
+This project includes:
+
+- **Input Validation**: Query and connection parameter validation to prevent errors
+- **Modern Type Hints**: Uses Python 3.9+ syntax (`dict`, `list`, `tuple`) instead of `typing` module
+- **Structured Logging**: Centralized logging setup with consistent formatting
+- **Configuration Management**: All settings and constants centralized in configuration module
+- **Error Handling**: Comprehensive exception handling with meaningful error messages
+- **Test Coverage**: Full test suite covering all critical paths
 
 ## 🏗️ Architecture
 
